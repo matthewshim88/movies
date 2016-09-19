@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h2>Movie Database</h2>
+    <form action=/submit, method=='POST'>
+      {% csrf_token %}
+      <p>Movie Title: <input type='text' name='movie'></p>
+      <p><input type='submit' value = 'Add Movie'></p>
+    </form>
+    <table>
+      <thead>
+        <tr>
+          <th>Movie Title</th>
+          <th>Date Added</th>
+          <th>Actions:</th>
+        </tr>
+      </thead>
+      {% for i in all_movies %}
+        <td> {{ i.movie_title }} </td>
+        <td>{{ i.created_at }}</td>
+        <td><form action='addActor' method='POST'>
+          <form>
+        </td>
+      {% endfor %}
+    </table>
+  </body>
+</html>
