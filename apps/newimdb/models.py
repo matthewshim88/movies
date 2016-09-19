@@ -10,6 +10,6 @@ class Movie(models.Model):
 
 class Actor(models.Model):
     name = models.CharField(max_length = 100)
-    movies = models.ManytoManyField(Movies)
+    movies = models.ManyToManyField(Movie)
     created_at = models.DateTimeField(auto_now_add = True)
     updated_at = models.DateTimeField(auto_now = True)
