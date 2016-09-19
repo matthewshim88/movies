@@ -4,7 +4,7 @@ from models import Movie, Actor
 
 def index(request):
     context = {
-        all_movies = Movies.objects.all()
+        "all_movies" : Movie.objects.all()
     }
     return render(request, 'newimdb/index.html', context)
 
@@ -15,3 +15,4 @@ def addMovie(request):
 
 def addActor(request, id):
     if request.method=='POST':
+    	pass
